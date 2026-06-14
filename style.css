@@ -128,3 +128,7 @@ button {
 button:active {
   transform: scale(0.98);
 }
+label {
+  display: block;
+  padding: 6px 0;
+}
