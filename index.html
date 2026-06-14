@@ -110,3 +110,52 @@
   <button onclick="startDay()">Start My Day</button>
   <button onclick="endDay()">End My Day</button>
 </div>
+<div class="app">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <h1>Life OS</h1>
+
+    <div class="actions">
+      <button onclick="startDay()">Start Day</button>
+      <button onclick="endDay()">End Day</button>
+    </div>
+  </div>
+
+  <!-- SIDEBAR + MAIN -->
+  <div class="layout">
+
+    <div class="sidebar">
+      <button onclick="showTab('dashboard')">Dashboard</button>
+      <button onclick="showTab('schedule')">Schedule</button>
+      <button onclick="showTab('journal')">Journal</button>
+    </div>
+
+    <div class="main">
+
+      <!-- DASHBOARD -->
+      <div id="dashboard" class="tab active">
+
+        <!-- PUT your Daily Standards + Score HERE -->
+
+      </div>
+
+      <!-- SCHEDULE -->
+      <div id="schedule" class="tab">
+
+        <!-- PUT your table HERE -->
+
+      </div>
+
+      <!-- JOURNAL -->
+      <div id="journal" class="tab">
+
+        <button onclick="startJournal()">Start Journal</button>
+        <p id="journalStatus"></p>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
