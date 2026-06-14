@@ -83,3 +83,13 @@ function endDay() {
   let completed = document.querySelectorAll("input[type='checkbox']:checked").length;
   alert("Day ended. Completed tasks: " + completed);
 }
+function startDay() {
+  document.querySelectorAll("input[type='checkbox']").forEach(box => {
+    box.checked = false;
+  });
+
+  saveStateIfExists();
+  updateScoresIfExists();
+
+  alert("New day started. Focus: revenue first, everything else follows.");
+}
