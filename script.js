@@ -75,3 +75,11 @@ function startJournal() {
 // INIT
 loadState();
 updateScores();
+function startDay() {
+  alert("Day started. Focus on revenue first.");
+}
+
+function endDay() {
+  let completed = document.querySelectorAll("input[type='checkbox']:checked").length;
+  alert("Day ended. Completed tasks: " + completed);
+}
