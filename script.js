@@ -93,3 +93,19 @@ function startDay() {
 
   alert("New day started. Focus: revenue first, everything else follows.");
 }
+function endDay() {
+  let total = document.querySelectorAll("input[type='checkbox']").length;
+  let done = document.querySelectorAll("input[type='checkbox']:checked").length;
+
+  let percent = total === 0 ? 0 : Math.round((done / total) * 100);
+
+  alert(
+    "Day complete.\n\nTasks done: " +
+    done +
+    "/" +
+    total +
+    "\nCompletion: " +
+    percent +
+    "%"
+  );
+}
