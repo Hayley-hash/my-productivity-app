@@ -116,3 +116,15 @@ button {
     margin-top: 5px;
   }
 }
+button {
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+button:active {
+  transform: scale(0.98);
+}
