@@ -132,3 +132,46 @@ label {
   display: block;
   padding: 6px 0;
 }
+/* FULL APP LAYOUT */
+.layout {
+  flex-direction: column;
+}
+
+/* MAIN AREA FULL SCREEN FEEL */
+.main {
+  padding: 15px;
+  padding-bottom: 70px; /* space for bottom nav */
+}
+
+/* BOTTOM NAV (MOBILE APP STYLE) */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-around;
+
+  background: #111;
+  padding: 10px 0;
+
+  border-top: 1px solid #333;
+}
+
+.bottom-nav button {
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  border: none;
+}
+
+/* ACTIVE TAB FEEL (optional highlight later) */
+.tab {
+  animation: fade 0.2s ease-in;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
