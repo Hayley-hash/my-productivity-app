@@ -109,3 +109,10 @@ function endDay() {
     "%"
   );
 }
+function saveStateIfExists() {
+  if (typeof saveState === "function") saveState();
+}
+
+function updateScoresIfExists() {
+  if (typeof updateScores === "function") updateScores();
+}
