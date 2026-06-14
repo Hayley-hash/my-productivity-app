@@ -116,3 +116,10 @@ function saveStateIfExists() {
 function updateScoresIfExists() {
   if (typeof updateScores === "function") updateScores();
 }
+function showTab(tabId) {
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.classList.remove("active");
+  });
+
+  document.getElementById(tabId).classList.add("active");
+}
