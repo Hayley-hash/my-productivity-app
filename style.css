@@ -75,3 +75,44 @@ button {
   border: none;
   cursor: pointer;
 }
+/* MOBILE OPTIMISATION */
+@media (max-width: 768px) {
+
+  .layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+  }
+
+  .sidebar button {
+    flex: 1;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .main {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
