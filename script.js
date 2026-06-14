@@ -123,3 +123,6 @@ function showTab(tabId) {
 
   document.getElementById(tabId).classList.add("active");
 }
+document.addEventListener("DOMContentLoaded", () => {
+  showTab("dashboard");
+});
