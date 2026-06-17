@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Life OS</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<!-- HOME -->
 <div id="home" class="page active">
 
   <div class="layout">
 
-    <!-- LEFT HERO -->
     <div class="hero">
-
       <h1>Life OS</h1>
 
       <p class="subtitle">
@@ -24,15 +11,10 @@
 
       <div class="cta">
         <p>Welcome back 👋</p>
-
-        <button onclick="show('dashboard')">
-          Enter App
-        </button>
+        <button onclick="show('dashboard')">Enter App</button>
       </div>
-
     </div>
 
-    <!-- RIGHT PANEL -->
     <div class="panel">
 
       <div class="tile" onclick="show('journal')">📓 Journal</div>
@@ -40,10 +22,9 @@
       <div class="tile" onclick="show('schedule')">📅 Schedule</div>
       <div class="tile" onclick="show('dashboard')">📌 Dashboard</div>
 
-      <!-- IMAGE BLOCK -->
       <div class="image-card">
-        <img src="home.png" alt="Home image">
-        <div class="caption">Coming soon: AI insights</div>
+        <img src="home.png">
+        <div class="caption">Coming soon: AI-powered insights</div>
       </div>
 
     </div>
@@ -51,39 +32,3 @@
   </div>
 
 </div>
-
-<!-- DASHBOARD -->
-<div id="dashboard" class="page">
-  <div class="page-inner">
-    <h2>Dashboard</h2>
-    <button onclick="show('home')">← Back</button>
-  </div>
-</div>
-
-<!-- JOURNAL -->
-<div id="journal" class="page">
-  <div class="page-inner">
-    <h2>Journal</h2>
-    <button onclick="show('home')">← Back</button>
-  </div>
-</div>
-
-<!-- STATS -->
-<div id="stats" class="page">
-  <div class="page-inner">
-    <h2>Stats</h2>
-    <button onclick="show('home')">← Back</button>
-  </div>
-</div>
-
-<!-- SCHEDULE -->
-<div id="schedule" class="page">
-  <div class="page-inner">
-    <h2>Schedule</h2>
-    <button onclick="show('home')">← Back</button>
-  </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
