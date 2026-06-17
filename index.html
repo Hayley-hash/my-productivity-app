@@ -9,48 +9,44 @@
 
 <body>
 
-  <!-- TOP NAV -->
-  <div class="topbar">
+  <!-- HEADER -->
+  <header class="header">
+    <h1>Life OS</h1>
+  </header>
+
+  <!-- TOP BUTTON BAR -->
+  <div class="button-bar">
     <button onclick="showPage('home')">Home</button>
     <button onclick="showPage('canvas')">Canvas</button>
+    <button onclick="alert('Settings clicked')">Settings</button>
   </div>
 
-  <!-- HOME PAGE -->
-  <div id="home" class="page active">
+  <!-- CONTENT AREA -->
+  <main>
 
-    <div class="home-wrapper">
+    <!-- HOME -->
+    <div id="home" class="page active">
 
-      <!-- Canva image background -->
-      <img src="home.png" class="home-image" alt="Home"/>
-
-      <!-- REAL clickable button -->
-      <button class="overlay-btn" onclick="showPage('canvas')">
-        Enter Canvas
-      </button>
+      <img src="home.png" class="hero-image" alt="Home"/>
 
     </div>
 
-  </div>
+    <!-- CANVAS -->
+    <div id="canvas" class="page">
 
-  <!-- CANVAS PAGE -->
-  <div id="canvas" class="page">
+      <h2>Canvas</h2>
 
-    <h1>Canvas</h1>
-
-    <div class="card">
-
-      <p>This is your working space.</p>
-
-      <button onclick="alert('Button works!')">
-        Test Button
-      </button>
-
-      <button onclick="showPage('home')">
-        Back Home
-      </button>
+      <p>This is your working area.</p>
 
     </div>
 
+  </main>
+
+  <!-- BOTTOM BUTTON BAR -->
+  <div class="bottom-bar">
+    <button onclick="alert('Add')">Add</button>
+    <button onclick="alert('Save')">Save</button>
+    <button onclick="showPage('home')">Back Home</button>
   </div>
 
   <script src="script.js"></script>
