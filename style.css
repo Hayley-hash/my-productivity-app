@@ -1,54 +1,71 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #1b2a41, #0f1722);
+  background: radial-gradient(circle at top left, #1b2a41, #0f1722);
   color: white;
 }
 
 .page { display: none; }
 .page.active { display: block; }
 
-.app {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px;
+/* LAYOUT */
+.layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  height: 100vh;
+  padding: 60px;
+  gap: 40px;
 }
 
-/* TOP BAR */
-.topbar {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.topbar h2 {
-  font-size: 48px;
+/* LEFT HERO */
+.hero h1 {
+  font-size: 64px;
   margin: 0;
 }
 
-.topbar p {
+.subtitle {
   color: #9fb0c3;
+  font-size: 18px;
+  margin-top: 10px;
+  max-width: 400px;
 }
 
-/* GRID SYSTEM (THIS is what Canva uses visually) */
-.grid {
+.cta {
+  margin-top: 60px;
+  background: rgba(255,255,255,0.06);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* RIGHT PANEL */
+.panel {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
 
-/* CARDS */
-.card {
+/* TILES */
+.tile {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
   padding: 20px;
-  border-radius: 16px;
+  border-radius: 14px;
   cursor: pointer;
 }
 
-.card.main {
+.tile:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* IMAGE */
+.image {
   grid-column: span 2;
-  text-align: center;
+}
+
+.image img {
+  width: 100%;
+  border-radius: 16px;
 }
 
 /* BUTTON */
@@ -63,15 +80,7 @@ button {
   cursor: pointer;
 }
 
-/* IMAGE BANNER */
-.banner {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.banner img {
-  width: 100%;
-  border-radius: 16px;
-  margin-top: 10px;
-  opacity: 0.9;
+/* PAGE INNER */
+.page-inner {
+  padding: 40px;
 }
