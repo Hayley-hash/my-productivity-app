@@ -31,7 +31,6 @@
       <button onclick="showTab('schedule')">Schedule</button>
       <button onclick="showTab('journal')">Journal</button>
 
-      <!-- DAY SWITCHER -->
       <hr style="border-color:#1f2937; margin:10px 0;">
 
       <button onclick="setDay('Monday')">Monday</button>
@@ -49,9 +48,7 @@
 
         <div class="card">
           <h3>Completion</h3>
-          <p>
-            <span id="completed">0</span> / <span id="total">0</span>
-          </p>
+          <p><span id="completed">0</span> / <span id="total">0</span></p>
         </div>
 
         <div class="card">
@@ -65,13 +62,24 @@
         <div class="card">
           <h3>Habits</h3>
 
-          <label><input type="checkbox" data-type="health"> Brush Teeth AM</label>
-          <label><input type="checkbox" data-type="health"> Brush Teeth PM</label>
-          <label><input type="checkbox" data-type="health"> Shower</label>
-          <label><input type="checkbox" data-type="growth"> Journal</label>
-          <label><input type="checkbox" data-type="money"> LinkedIn Activity</label>
-          <label><input type="checkbox" data-type="money"> Revenue Activity</label>
-          <label><input type="checkbox" data-type="health"> Exercise</label>
+          <div class="habit-group">
+            <h4>🧠 Health</h4>
+            <label><input type="checkbox" data-type="health"> Brush Teeth AM</label>
+            <label><input type="checkbox" data-type="health"> Brush Teeth PM</label>
+            <label><input type="checkbox" data-type="health"> Shower</label>
+            <label><input type="checkbox" data-type="health"> Exercise</label>
+          </div>
+
+          <div class="habit-group">
+            <h4>💰 Money</h4>
+            <label><input type="checkbox" data-type="money"> LinkedIn Activity</label>
+            <label><input type="checkbox" data-type="money"> Revenue Activity</label>
+          </div>
+
+          <div class="habit-group">
+            <h4>📚 Growth</h4>
+            <label><input type="checkbox" data-type="growth"> Journal</label>
+          </div>
 
         </div>
 
