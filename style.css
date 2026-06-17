@@ -1,105 +1,68 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: 'Inter', sans-serif;
-  background: #0b1220;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: radial-gradient(circle at top, #111c2e 0%, #0b1220 60%);
   color: #e6edf7;
 }
 
-/* TOP */
-.topbar {
+/* NAV */
+.nav {
   display: flex;
-  justify-content: space-between;
-  padding: 16px;
-  background: #111c2e;
-  border-bottom: 1px solid #1f2a44;
+  justify-content: space-around;
+  padding: 14px;
+  background: rgba(17, 28, 46, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(31, 42, 68, 0.6);
+  position: sticky;
+  top: 0;
 }
 
-/* LAYOUT */
-.layout {
-  display: flex;
-  height: calc(100vh - 60px);
+.nav button {
+  background: transparent;
+  border: none;
+  color: #cfd8e3;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
 }
 
-/* SIDEBAR */
-.sidebar {
-  width: 220px;
-  background: #111c2e;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border-right: 1px solid #1f2a44;
+.nav button:hover {
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* PAGES */
+.page {
+  display: none;
+  padding: 25px;
+}
+
+.active {
+  display: block;
+  animation: fadeIn 0.25s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CARDS */
+.card {
+  background: rgba(17, 28, 46, 0.7);
+  border: 1px solid rgba(31, 42, 68, 0.6);
+  padding: 18px;
+  border-radius: 16px;
+  margin-top: 16px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 /* BUTTONS */
 button {
-  background: #162338;
-  border: 1px solid #1f2a44;
-  color: #e6edf7;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 button:hover {
-  background: #1c2b44;
-}
-
-/* MAIN */
-.main {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
-}
-
-/* TABS */
-.tab {
-  display: none;
-}
-
-.tab.active {
-  display: block;
-}
-
-/* CARD */
-.card {
-  background: #111c2e;
-  border: 1px solid #1f2a44;
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 16px;
-}
-
-/* LABELS */
-label {
-  display: block;
-  padding: 6px 0;
-}
-
-/* TABLE */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  border-bottom: 1px solid #1f2a44;
-  padding: 10px;
-}
-
-/* BOTTOM NAV */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #111c2e;
-  border-top: 1px solid #1f2a44;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
+  transform: translateY(-2px);
 }
