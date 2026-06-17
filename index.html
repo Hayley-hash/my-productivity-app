@@ -1,10 +1,11 @@
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Life OS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -31,38 +32,44 @@
       <button onclick="showTab('journal')">Journal</button>
     </div>
 
-    <!-- MAIN -->
+    <!-- MAIN CONTENT -->
     <div class="main">
 
       <!-- DASHBOARD -->
       <div id="dashboard" class="tab active">
 
-        <h2>Weekly Progress</h2>
+        <h2>Today</h2>
 
-        <p>
-          Completed:
-          <span id="completed">0</span> /
-          <span id="total">0</span>
-        </p>
+        <!-- Progress -->
+        <div class="card">
+          <h3>Completion</h3>
+          <p>
+            <span id="completed">0</span> / <span id="total">0</span>
+          </p>
+        </div>
 
-        <h3>Scores</h3>
+        <!-- Scores -->
+        <div class="card">
+          <h3>Scores</h3>
+          <p>💰 Money: <span id="moneyScore">0%</span></p>
+          <p>💪 Health: <span id="healthScore">0%</span></p>
+          <p>📚 Growth: <span id="growthScore">0%</span></p>
+          <p>🏡 Life: <span id="lifeScore">0%</span></p>
+        </div>
 
-        <p>💰 Money: <span id="moneyScore">0%</span></p>
-        <p>💪 Health: <span id="healthScore">0%</span></p>
-        <p>📚 Growth: <span id="growthScore">0%</span></p>
-        <p>🏡 Life: <span id="lifeScore">0%</span></p>
+        <!-- Habits -->
+        <div class="card">
+          <h3>Habits</h3>
 
-        <hr>
+          <label><input type="checkbox" data-type="health"> Brush Teeth AM</label><br>
+          <label><input type="checkbox" data-type="health"> Brush Teeth PM</label><br>
+          <label><input type="checkbox" data-type="health"> Shower</label><br>
+          <label><input type="checkbox" data-type="growth"> Journal</label><br>
+          <label><input type="checkbox" data-type="money"> LinkedIn Activity</label><br>
+          <label><input type="checkbox" data-type="money"> Revenue Activity</label><br>
+          <label><input type="checkbox" data-type="health"> Exercise</label><br>
 
-        <h3>Daily Standards</h3>
-
-        <label><input type="checkbox" data-type="health"> Brush Teeth AM</label><br>
-        <label><input type="checkbox" data-type="health"> Brush Teeth PM</label><br>
-        <label><input type="checkbox" data-type="health"> Shower</label><br>
-        <label><input type="checkbox" data-type="growth"> Journal</label><br>
-        <label><input type="checkbox" data-type="money"> LinkedIn Activity</label><br>
-        <label><input type="checkbox" data-type="money"> Revenue Activity</label><br>
-        <label><input type="checkbox" data-type="health"> Exercise</label><br>
+        </div>
 
       </div>
 
@@ -71,81 +78,26 @@
 
         <h2>Monday Schedule</h2>
 
-        <table border="1" cellpadding="5">
+        <table border="1" cellpadding="8">
           <tr>
             <th>Time</th>
             <th>Task</th>
           </tr>
 
-          <tr>
-            <td>06:00</td>
-            <td>Wake & Coffee</td>
-          </tr>
-
-          <tr>
-            <td>06:30</td>
-            <td>Journal</td>
-          </tr>
-
-          <tr>
-            <td>07:00</td>
-            <td>LinkedIn Comments</td>
-          </tr>
-
-          <tr>
-            <td>07:30</td>
-            <td>Leads into Woodpecker</td>
-          </tr>
-
-          <tr>
-            <td>08:30</td>
-            <td>Woodpecker Tracking to HubSpot</td>
-          </tr>
-
-          <tr>
-            <td>10:00</td>
-            <td>Blog Posts for Week</td>
-          </tr>
-
-          <tr>
-            <td>12:00</td>
-            <td>Change for Gym</td>
-          </tr>
-
-          <tr>
-            <td>13:00</td>
-            <td>Weights</td>
-          </tr>
-
-          <tr>
-            <td>14:00</td>
-            <td>Sauna / Steam Room</td>
-          </tr>
-
-          <tr>
-            <td>15:00</td>
-            <td>Lunch</td>
-          </tr>
-
-          <tr>
-            <td>16:00</td>
-            <td>Prepare Dinner</td>
-          </tr>
-
-          <tr>
-            <td>17:00</td>
-            <td>Eat / Dogs</td>
-          </tr>
-
-          <tr>
-            <td>18:00</td>
-            <td>TV / Relax</td>
-          </tr>
-
-          <tr>
-            <td>21:00</td>
-            <td>Bed</td>
-          </tr>
+          <tr><td>06:00</td><td>Wake & Coffee</td></tr>
+          <tr><td>06:30</td><td>Journal</td></tr>
+          <tr><td>07:00</td><td>LinkedIn Comments</td></tr>
+          <tr><td>07:30</td><td>Leads into Woodpecker</td></tr>
+          <tr><td>08:30</td><td>HubSpot Tracking</td></tr>
+          <tr><td>10:00</td><td>Blog Posts</td></tr>
+          <tr><td>12:00</td><td>Gym Prep</td></tr>
+          <tr><td>13:00</td><td>Weights</td></tr>
+          <tr><td>14:00</td><td>Sauna / Steam</td></tr>
+          <tr><td>15:00</td><td>Lunch</td></tr>
+          <tr><td>16:00</td><td>Prepare Dinner</td></tr>
+          <tr><td>17:00</td><td>Eat / Dogs</td></tr>
+          <tr><td>18:00</td><td>Relax</td></tr>
+          <tr><td>21:00</td><td>Bed</td></tr>
 
         </table>
 
@@ -163,8 +115,8 @@
         <textarea
           id="journalEntry"
           rows="12"
-          style="width:100%;"
           placeholder="Write your journal entry here..."
+          style="width:100%; padding:10px;"
         ></textarea>
 
       </div>
@@ -172,7 +124,6 @@
     </div>
 
   </div>
-
 </div>
 
 <!-- MOBILE NAV -->
@@ -186,37 +137,3 @@
 
 </body>
 </html>
-<div id="dashboard" class="tab active">
-
-  <h2>Today</h2>
-
-  <!-- Progress Card -->
-  <div class="card">
-    <h3>Completion</h3>
-    <div class="progress-ring">
-      <span id="completed">0</span> / <span id="total">0</span>
-    </div>
-  </div>
-
-  <!-- Scores -->
-  <div class="card">
-    <h3>Scores</h3>
-    <p>💰 Money: <span id="moneyScore">0%</span></p>
-    <p>💪 Health: <span id="healthScore">0%</span></p>
-    <p>📚 Growth: <span id="growthScore">0%</span></p>
-    <p>🏡 Life: <span id="lifeScore">0%</span></p>
-  </div>
-
-  <!-- Habits -->
-  <div class="card">
-    <h3>Habits</h3>
-
-    <label><input type="checkbox" data-type="health"> Drink water</label><br>
-    <label><input type="checkbox" data-type="health"> Exercise</label><br>
-    <label><input type="checkbox" data-type="growth"> Journal</label><br>
-    <label><input type="checkbox" data-type="money"> Revenue task</label><br>
-    <label><input type="checkbox" data-type="life"> Clean desk</label><br>
-
-  </div>
-
-</div>
