@@ -1,36 +1,40 @@
 <div id="home" class="page active">
 
-  <div class="container">
+  <div class="app">
 
-    <!-- HERO -->
-    <div class="hero">
-      <h1>Life OS</h1>
-      <p>Your daily system for habits, focus, and progress</p>
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <h2>Life OS</h2>
+      <p>Your daily system for habits and focus</p>
     </div>
 
-    <!-- MAIN ACTION -->
-    <div class="main-card">
-      <p class="welcome">Welcome back 👋</p>
-
-      <button onclick="show('dashboard')">
-        Enter App
-      </button>
-    </div>
-
-    <!-- FEATURE GRID -->
+    <!-- HERO GRID -->
     <div class="grid">
 
-      <div class="tile">📓 Journal</div>
-      <div class="tile">📊 Stats</div>
-      <div class="tile">📅 Schedule</div>
-      <div class="tile">🎯 Focus</div>
+      <div class="card main">
+        <p>Welcome back 👋</p>
+        <button onclick="show('dashboard')">Enter App</button>
+      </div>
+
+      <div class="card small" onclick="show('journal')">
+        Journal
+      </div>
+
+      <div class="card small" onclick="show('stats')">
+        Stats
+      </div>
+
+      <div class="card small" onclick="show('schedule')">
+        Schedule
+      </div>
 
     </div>
 
-    <!-- FOOTER -->
-    <p class="footer">
-      Track habits • Build consistency • Stay focused
-    </p>
+    <!-- IMAGE SECTION -->
+    <div class="banner">
+      <img src="home.png" />
+      <p>Coming soon: AI-powered insights</p>
+    </div>
 
   </div>
 
