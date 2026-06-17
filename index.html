@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life OS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
 <div class="app">
 
   <!-- TOP BAR -->
@@ -10,47 +21,167 @@
     </div>
   </div>
 
-  <!-- SIDEBAR + MAIN -->
   <div class="layout">
 
+    <!-- SIDEBAR -->
     <div class="sidebar">
       <button onclick="showTab('dashboard')">Dashboard</button>
       <button onclick="showTab('schedule')">Schedule</button>
       <button onclick="showTab('journal')">Journal</button>
     </div>
 
+    <!-- MAIN -->
     <div class="main">
 
       <!-- DASHBOARD -->
       <div id="dashboard" class="tab active">
 
-        <!-- PUT your Daily Standards + Score HERE -->
+        <h2>Weekly Progress</h2>
+
+        <p>
+          Completed:
+          <span id="completed">0</span> /
+          <span id="total">0</span>
+        </p>
+
+        <h3>Scores</h3>
+
+        <p>💰 Money: <span id="moneyScore">0%</span></p>
+        <p>💪 Health: <span id="healthScore">0%</span></p>
+        <p>📚 Growth: <span id="growthScore">0%</span></p>
+        <p>🏡 Life: <span id="lifeScore">0%</span></p>
+
+        <hr>
+
+        <h3>Daily Standards</h3>
+
+        <label><input type="checkbox" data-type="health"> Brush Teeth AM</label><br>
+        <label><input type="checkbox" data-type="health"> Brush Teeth PM</label><br>
+        <label><input type="checkbox" data-type="health"> Shower</label><br>
+        <label><input type="checkbox" data-type="growth"> Journal</label><br>
+        <label><input type="checkbox" data-type="money"> LinkedIn Activity</label><br>
+        <label><input type="checkbox" data-type="money"> Revenue Activity</label><br>
+        <label><input type="checkbox" data-type="health"> Exercise</label><br>
 
       </div>
 
       <!-- SCHEDULE -->
       <div id="schedule" class="tab">
 
-        <!-- PUT your table HERE -->
+        <h2>Monday Schedule</h2>
+
+        <table border="1" cellpadding="5">
+          <tr>
+            <th>Time</th>
+            <th>Task</th>
+          </tr>
+
+          <tr>
+            <td>06:00</td>
+            <td>Wake & Coffee</td>
+          </tr>
+
+          <tr>
+            <td>06:30</td>
+            <td>Journal</td>
+          </tr>
+
+          <tr>
+            <td>07:00</td>
+            <td>LinkedIn Comments</td>
+          </tr>
+
+          <tr>
+            <td>07:30</td>
+            <td>Leads into Woodpecker</td>
+          </tr>
+
+          <tr>
+            <td>08:30</td>
+            <td>Woodpecker Tracking to HubSpot</td>
+          </tr>
+
+          <tr>
+            <td>10:00</td>
+            <td>Blog Posts for Week</td>
+          </tr>
+
+          <tr>
+            <td>12:00</td>
+            <td>Change for Gym</td>
+          </tr>
+
+          <tr>
+            <td>13:00</td>
+            <td>Weights</td>
+          </tr>
+
+          <tr>
+            <td>14:00</td>
+            <td>Sauna / Steam Room</td>
+          </tr>
+
+          <tr>
+            <td>15:00</td>
+            <td>Lunch</td>
+          </tr>
+
+          <tr>
+            <td>16:00</td>
+            <td>Prepare Dinner</td>
+          </tr>
+
+          <tr>
+            <td>17:00</td>
+            <td>Eat / Dogs</td>
+          </tr>
+
+          <tr>
+            <td>18:00</td>
+            <td>TV / Relax</td>
+          </tr>
+
+          <tr>
+            <td>21:00</td>
+            <td>Bed</td>
+          </tr>
+
+        </table>
 
       </div>
 
       <!-- JOURNAL -->
       <div id="journal" class="tab">
 
+        <h2>Journal</h2>
+
         <button onclick="startJournal()">Start Journal</button>
+
         <p id="journalStatus"></p>
+
+        <textarea
+          id="journalEntry"
+          rows="12"
+          style="width:100%;"
+          placeholder="Write your journal entry here..."
+        ></textarea>
 
       </div>
 
     </div>
 
   </div>
+
 </div>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- MOBILE NAV -->
 <div class="bottom-nav">
   <button onclick="showTab('dashboard')">🏠</button>
   <button onclick="showTab('schedule')">📅</button>
   <button onclick="showTab('journal')">✍️</button>
 </div>
+
 <script src="script.js"></script>
+
+</body>
+</html>
