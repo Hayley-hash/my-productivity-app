@@ -9,19 +9,26 @@
 
 <body>
 
-  <!-- NAV -->
+  <!-- TOP NAV -->
   <div class="button-bar">
     <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('canvas')">Canvas</button>
     <button onclick="showPage('schedule')">Schedule</button>
   </div>
 
-  <!-- HOME PAGE -->
+  <!-- ================= HOME ================= -->
   <div id="home" class="page active">
-    <h1>Life OS</h1>
-    <p>Welcome</p>
+    <h1>Front Page</h1>
+    <p>This is your home screen.</p>
   </div>
 
-  <!-- SCHEDULE FORM PAGE -->
+  <!-- ================= CANVAS ================= -->
+  <div id="canvas" class="page">
+    <h1>Canvas</h1>
+    <p>Your working space goes here.</p>
+  </div>
+
+  <!-- ================= SCHEDULE FORM ================= -->
   <div id="schedule" class="page">
 
     <h2>Personalise your schedule</h2>
@@ -38,7 +45,6 @@
         <option>South Africa</option>
         <option>Brazil</option>
         <option>England</option>
-        <option>France</option>
       </select>
 
       <label>Name</label>
@@ -53,24 +59,19 @@
       <label>Email</label>
       <input type="email" placeholder="you@company.com">
 
-      <label>Phone (optional)</label>
+      <label>Phone</label>
       <input type="tel" placeholder="+27 82 000 0000">
 
-      <label>Your Timezone</label>
+      <label>Timezone</label>
       <select>
-        <option>SAST — South Africa (UTC+2)</option>
-        <option>GMT — UK</option>
-        <option>EST — USA East</option>
-        <option>PST — USA West</option>
+        <option>SAST (South Africa)</option>
+        <option>GMT</option>
+        <option>EST</option>
       </select>
-
-      <p class="info">
-        Match times will be shown in your local time alongside SAST
-      </p>
 
       <label class="checkbox">
         <input type="checkbox">
-        Email me the daily spoiler-free watch brief each morning
+        Email me daily updates
       </label>
 
       <button type="button" onclick="saveForm()">
