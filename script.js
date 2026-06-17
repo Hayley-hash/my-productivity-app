@@ -1,128 +1,133 @@
-const checkboxes = document.querySelectorAll("input[type='checkbox']");
+document.addEventListener("DOMContentLoaded", () => {
 
-// LOAD
-function loadState() {
-  checkboxes.forEach((box, i) => {
-    box.checked = localStorage.getItem("box_" + i) === "true";
-  });
-}
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
 
-// SAVE
-function saveState() {
-  checkboxes.forEach((box, i) => {
-    localStorage.setItem("box_" + i, box.checked);
-  });
-}
+  // -------------------
+  // LOAD STATE
+  // -------------------
+  function loadState() {
+    checkboxes.forEach((box, i) => {
+      box.checked = localStorage.getItem("box_" + i) === "true";
+    });
+  }
 
-// SCORE CALC
-function updateScores() {
-  let total = checkboxes.length;
-  let completed = 0;
+  // -------------------
+  // SAVE STATE
+  // -------------------
+  function saveState() {
+    checkboxes.forEach((box, i) => {
+      localStorage.setItem("box_" + i, box.checked);
+    });
+  }
 
-  let money = 0, health = 0, growth = 0, life = 0;
-  let moneyTotal = 0, healthTotal = 0, growthTotal = 0, lifeTotal = 0;
+  // -------------------
+  // SCORE CALC
+  // -------------------
+  function updateScores() {
+    let total = checkboxes.length;
+    let completed = 0;
 
+    let money = 0, health = 0, growth = 0, life = 0;
+    let moneyTotal = 0, healthTotal = 0, growthTotal = 0, lifeTotal = 0;
+
+    checkboxes.forEach(box => {
+      let type = box.dataset.type || "life";
+
+      if (box.checked) {
+        completed++;
+
+        if (type === "money") money++;
+        if (type === "health") health++;
+        if (type === "growth") growth++;
+        if (type === "life") life++;
+      }
+
+      if (type === "money") moneyTotal++;
+      if (type === "health") healthTotal++;
+      if (type === "growth") growthTotal++;
+      if (type === "life") lifeTotal++;
+    });
+
+    document.getElementById("completed").innerText = completed;
+    document.getElementById("total").innerText = total;
+
+    document.getElementById("moneyScore").innerText =
+      moneyTotal ? Math.round((money / moneyTotal) * 100) + "%" : "0%";
+
+    document.getElementById("healthScore").innerText =
+      healthTotal ? Math.round((health / healthTotal) * 100) + "%" : "0%";
+
+    document.getElementById("growthScore").innerText =
+      growthTotal ? Math.round((growth / growthTotal) * 100) + "%" : "0%";
+
+    document.getElementById("lifeScore").innerText =
+      lifeTotal ? Math.round((life / lifeTotal) * 100) + "%" : "0%";
+  }
+
+  // -------------------
+  // EVENTS
+  // -------------------
   checkboxes.forEach(box => {
-    let type = box.dataset.type || "life";
-
-    if (box.checked) {
-      completed++;
-
-      if (type === "money") money++;
-      if (type === "health") health++;
-      if (type === "growth") growth++;
-      if (type === "life") life++;
-    }
-
-    if (type === "money") moneyTotal++;
-    if (type === "health") healthTotal++;
-    if (type === "growth") growthTotal++;
-    if (type === "life") lifeTotal++;
+    box.addEventListener("change", () => {
+      saveState();
+      updateScores();
+    });
   });
 
-  document.getElementById("completed").innerText = completed;
-  document.getElementById("total").innerText = total;
+  // -------------------
+  // JOURNAL
+  // -------------------
+  window.startJournal = function () {
+    document.getElementById("journalStatus").innerText = "Journal running...";
 
-  document.getElementById("moneyScore").innerText =
-    moneyTotal ? Math.round((money / moneyTotal) * 100) + "%" : "0%";
+    setTimeout(() => alert("30 min check-in"), 1800000);
+    setTimeout(() => alert("60 min stop"), 3600000);
+  };
 
-  document.getElementById("healthScore").innerText =
-    healthTotal ? Math.round((health / healthTotal) * 100) + "%" : "0%";
-
-  document.getElementById("growthScore").innerText =
-    growthTotal ? Math.round((growth / growthTotal) * 100) + "%" : "0%";
-
-  document.getElementById("lifeScore").innerText =
-    lifeTotal ? Math.round((life / lifeTotal) * 100) + "%" : "0%";
-}
-
-// EVENTS
-checkboxes.forEach(box => {
-  box.addEventListener("change", () => {
+  // -------------------
+  // DAY CONTROLS
+  // -------------------
+  window.startDay = function () {
+    checkboxes.forEach(box => box.checked = false);
     saveState();
     updateScores();
-  });
-});
+    alert("New day started. Focus on revenue first.");
+  };
 
-// JOURNAL
-function startJournal() {
-  document.getElementById("journalStatus").innerText = "Journal running...";
+  window.endDay = function () {
+    let total = checkboxes.length;
+    let done = document.querySelectorAll("input[type='checkbox']:checked").length;
 
-  setTimeout(() => alert("30 min check-in"), 1800000);
-  setTimeout(() => alert("60 min stop"), 3600000);
-}
+    let percent = total === 0 ? 0 : Math.round((done / total) * 100);
 
-// INIT
-loadState();
-updateScores();
-function startDay() {
-  alert("Day started. Focus on revenue first.");
-}
+    alert(
+      "Day complete.\n\nTasks done: " +
+      done +
+      "/" +
+      total +
+      "\nCompletion: " +
+      percent +
+      "%"
+    );
+  };
 
-function endDay() {
-  let completed = document.querySelectorAll("input[type='checkbox']:checked").length;
-  alert("Day ended. Completed tasks: " + completed);
-}
-function startDay() {
-  document.querySelectorAll("input[type='checkbox']").forEach(box => {
-    box.checked = false;
-  });
+  // -------------------
+  // TABS
+  // -------------------
+  window.showTab = function (tabId) {
+    document.querySelectorAll(".tab").forEach(tab => {
+      tab.classList.remove("active");
+    });
 
-  saveStateIfExists();
-  updateScoresIfExists();
+    document.getElementById(tabId).classList.add("active");
+  };
 
-  alert("New day started. Focus: revenue first, everything else follows.");
-}
-function endDay() {
-  let total = document.querySelectorAll("input[type='checkbox']").length;
-  let done = document.querySelectorAll("input[type='checkbox']:checked").length;
-
-  let percent = total === 0 ? 0 : Math.round((done / total) * 100);
-
-  alert(
-    "Day complete.\n\nTasks done: " +
-    done +
-    "/" +
-    total +
-    "\nCompletion: " +
-    percent +
-    "%"
-  );
-}
-function saveStateIfExists() {
-  if (typeof saveState === "function") saveState();
-}
-
-function updateScoresIfExists() {
-  if (typeof updateScores === "function") updateScores();
-}
-function showTab(tabId) {
-  document.querySelectorAll(".tab").forEach(tab => {
-    tab.classList.remove("active");
-  });
-
-  document.getElementById(tabId).classList.add("active");
-}
-document.addEventListener("DOMContentLoaded", () => {
+  // -------------------
+  // INIT
+  // -------------------
+  loadState();
+  updateScores();
   showTab("dashboard");
+
+});
 });
