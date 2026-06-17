@@ -125,3 +125,113 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Life OS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: #0b1220;
+      color: #e6edf7;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 12px;
+      background: #111c2e;
+      border-bottom: 1px solid #1f2a44;
+    }
+
+    .nav button {
+      background: none;
+      border: none;
+      color: #e6edf7;
+      cursor: pointer;
+    }
+
+    .page {
+      display: none;
+      padding: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .card {
+      background: #111c2e;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #1f2a44;
+      margin-top: 15px;
+    }
+
+    button.main {
+      background: #162338;
+      border: 1px solid #1f2a44;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      width: 100%;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <button onclick="show('home')">Home</button>
+  <button onclick="show('dashboard')">Dashboard</button>
+  <button onclick="show('schedule')">Schedule</button>
+  <button onclick="show('journal')">Journal</button>
+</div>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <h1>Life OS</h1>
+  <p>Your daily system for habits and focus</p>
+
+  <div class="card">
+    <p>Welcome</p>
+    <button class="main" onclick="show('dashboard')">Enter App</button>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="page">
+  <h1>Dashboard</h1>
+  <div class="card">Habits coming next</div>
+</div>
+
+<!-- SCHEDULE -->
+<div id="schedule" class="page">
+  <h1>Schedule</h1>
+  <div class="card">Your day plan</div>
+</div>
+
+<!-- JOURNAL -->
+<div id="journal" class="page">
+  <h1>Journal</h1>
+  <div class="card">Write here</div>
+</div>
+
+<script>
+  function show(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(page).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
