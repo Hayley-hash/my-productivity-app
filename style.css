@@ -1,49 +1,56 @@
-body {
+.halloween-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.halloween-header h1 {
+  font-size: 48px;
   margin: 0;
-  font-family: Arial;
-  background: #0f172a;
-  color: white;
 }
 
-.button-bar {
+.halloween-header h2 {
+  font-size: 32px;
+  color: orange;
+  margin: 0;
+}
+
+.meta {
   display: flex;
-  gap: 10px;
-  padding: 10px;
-  background: #111827;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-.page {
-  display: none;
-  padding: 20px;
-}
-
-.page.active {
-  display: block;
-}
-
-/* FORM */
-.form-card {
-  max-width: 500px;
+/* TABLE */
+.table-container {
+  max-width: 900px;
   margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: #1e293b;
-  padding: 20px;
+  background: white;
+  color: black;
   border-radius: 12px;
+  overflow: hidden;
 }
 
-input, select {
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-button {
+th, td {
+  border: 1px solid #ddd;
   padding: 10px;
+}
+
+input {
+  width: 100%;
   border: none;
-  border-radius: 8px;
-  background: #22c55e;
-  color: white;
-  cursor: pointer;
+  outline: none;
+}
+
+/* FOOTER */
+.halloween-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
 }
