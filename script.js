@@ -1,13 +1,11 @@
 function showPage(pageId) {
   const pages = document.querySelectorAll('.page');
 
-  pages.forEach(page => {
-    page.classList.remove('active');
-  });
+  pages.forEach(p => p.classList.remove('active'));
 
   document.getElementById(pageId).classList.add('active');
 }
 
 function saveForm() {
-  alert("Saved! (frontend only for now)");
+  alert("Saved!");
 }
