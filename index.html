@@ -6,133 +6,6 @@
   <title>Life OS</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<div class="app">
-
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <h1>Life OS</h1>
-
-    <div class="actions">
-      <button onclick="startDay()">Start Day</button>
-      <button onclick="endDay()">End Day</button>
-    </div>
-  </div>
-
-  <div class="layout">
-
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-      <button onclick="showTab('dashboard')">Dashboard</button>
-      <button onclick="showTab('schedule')">Schedule</button>
-      <button onclick="showTab('journal')">Journal</button>
-      <button onclick="showTab('stats')">Stats</button>
-
-      <hr style="border-color:#1f2a44; margin:10px 0;">
-
-      <button onclick="setDay('Monday')">Monday</button>
-      <button onclick="setDay('Tuesday')">Tuesday</button>
-      <button onclick="setDay('Wednesday')">Wednesday</button>
-    </div>
-
-    <!-- MAIN -->
-    <div class="main">
-
-      <!-- DASHBOARD -->
-      <div id="dashboard" class="tab active">
-
-        <h2>Today</h2>
-
-        <div class="card">
-          <h3>Completion</h3>
-          <p><span id="completed">0</span> / <span id="total">0</span></p>
-        </div>
-
-        <div class="card">
-          <h3>Scores</h3>
-          <p>💰 Money: <span id="moneyScore">0%</span></p>
-          <p>💪 Health: <span id="healthScore">0%</span></p>
-          <p>📚 Growth: <span id="growthScore">0%</span></p>
-        </div>
-
-        <div class="card">
-          <h3>Habits</h3>
-
-          <label><input type="checkbox" data-type="health"> Brush Teeth AM</label>
-          <label><input type="checkbox" data-type="health"> Brush Teeth PM</label>
-          <label><input type="checkbox" data-type="health"> Shower</label>
-          <label><input type="checkbox" data-type="health"> Exercise</label>
-
-          <label><input type="checkbox" data-type="money"> LinkedIn Activity</label>
-          <label><input type="checkbox" data-type="money"> Revenue Activity</label>
-
-          <label><input type="checkbox" data-type="growth"> Journal</label>
-        </div>
-
-      </div>
-
-      <!-- SCHEDULE -->
-      <div id="schedule" class="tab">
-        <h2 id="scheduleTitle">Monday Schedule</h2>
-
-        <div class="card">
-          <table>
-            <tr><th>Time</th><th>Task</th></tr>
-            <tr><td>06:00</td><td>Wake</td></tr>
-            <tr><td>07:00</td><td>Work Block</td></tr>
-            <tr><td>12:00</td><td>Gym</td></tr>
-            <tr><td>21:00</td><td>Sleep</td></tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- JOURNAL -->
-      <div id="journal" class="tab">
-        <h2>Journal</h2>
-
-        <button onclick="startJournal()">Start Journal</button>
-        <p id="journalStatus"></p>
-
-        <textarea id="journalEntry" rows="10" placeholder="Write here..."></textarea>
-      </div>
-
-      <!-- STATS -->
-      <div id="stats" class="tab">
-        <h2>Stats</h2>
-
-        <div class="card">
-          <p>Coming soon: streaks, graphs, weekly progress.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- MOBILE NAV -->
-<div class="bottom-nav">
-  <button onclick="showTab('dashboard')">🏠</button>
-  <button onclick="showTab('schedule')">📅</button>
-  <button onclick="showTab('journal')">✍️</button>
-  <button onclick="showTab('stats')">📊</button>
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Life OS</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -141,6 +14,9 @@
       background: #0b1220;
       color: #e6edf7;
     }
+
+    .page { display: none; padding: 20px; }
+    .active { display: block; }
 
     .nav {
       display: flex;
@@ -157,73 +33,53 @@
       cursor: pointer;
     }
 
-    .page {
-      display: none;
-      padding: 20px;
-    }
-
-    .active {
-      display: block;
-    }
-
     .card {
       background: #111c2e;
       padding: 20px;
       border-radius: 12px;
-      border: 1px solid #1f2a44;
       margin-top: 15px;
-    }
-
-    button.main {
-      background: #162338;
       border: 1px solid #1f2a44;
-      color: white;
-      padding: 10px;
-      border-radius: 10px;
-      width: 100%;
-      margin-top: 10px;
-      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
   <button onclick="show('home')">Home</button>
   <button onclick="show('dashboard')">Dashboard</button>
   <button onclick="show('schedule')">Schedule</button>
   <button onclick="show('journal')">Journal</button>
+  <button onclick="show('stats')">Stats</button>
 </div>
 
-<!-- HOME -->
 <div id="home" class="page active">
   <h1>Life OS</h1>
   <p>Your daily system for habits and focus</p>
 
   <div class="card">
-    <p>Welcome</p>
-    <button class="main" onclick="show('dashboard')">Enter App</button>
+    <button onclick="show('dashboard')">Enter App</button>
   </div>
 </div>
 
-<!-- DASHBOARD -->
 <div id="dashboard" class="page">
   <h1>Dashboard</h1>
-  <div class="card">Habits coming next</div>
+  <div class="card">Habits coming soon</div>
 </div>
 
-<!-- SCHEDULE -->
 <div id="schedule" class="page">
   <h1>Schedule</h1>
-  <div class="card">Your day plan</div>
+  <div class="card">Schedule coming soon</div>
 </div>
 
-<!-- JOURNAL -->
 <div id="journal" class="page">
   <h1>Journal</h1>
-  <div class="card">Write here</div>
+  <div class="card">Journal coming soon</div>
+</div>
+
+<div id="stats" class="page">
+  <h1>Stats</h1>
+  <div class="card">Stats coming soon</div>
 </div>
 
 <script>
