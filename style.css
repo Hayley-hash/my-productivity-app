@@ -36,23 +36,28 @@ body {
   display: block;
 }
 
-/* HOME IMAGE */
+/* HOME LAYOUT */
+.home-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* IMAGE (no click blocking) */
 .home-image {
   width: 100%;
   height: auto;
   display: block;
+  pointer-events: none;
 }
 
-/* CENTER BUTTON ON HOME IMAGE */
-#home {
-  position: relative;
-}
-
-.center-btn {
+/* BUTTON ON TOP OF IMAGE */
+.overlay-btn {
   position: absolute;
-  bottom: 60px;
+  bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 9999;
+
   padding: 15px 25px;
   border: none;
   background: #22c55e;
@@ -62,11 +67,11 @@ body {
   font-size: 16px;
 }
 
-.center-btn:hover {
+.overlay-btn:hover {
   background: #16a34a;
 }
 
-/* CANVAS CARD */
+/* CANVAS BOX */
 .card {
   margin-top: 20px;
   padding: 20px;
@@ -74,7 +79,7 @@ body {
   border-radius: 12px;
 }
 
-/* BUTTONS */
+/* DEFAULT BUTTONS */
 button {
   margin-top: 10px;
   margin-right: 10px;
