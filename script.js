@@ -7,3 +7,7 @@ function showPage(pageId) {
 
   document.getElementById(pageId).classList.add('active');
 }
+
+function saveForm() {
+  alert("Saved! (frontend only for now)");
+}
