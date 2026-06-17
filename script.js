@@ -2,71 +2,117 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const checkboxes = document.querySelectorAll("input[type='checkbox']");
 
-  // -------------------
-  // LOAD STATE
-  // -------------------
-  function loadState() {
-    checkboxes.forEach((box, i) => {
-      box.checked = localStorage.getItem("box_" + i) === "true";
+  // -----------------------
+  // TAB SYSTEM
+  // -----------------------
+  window.showTab = function(tabId) {
+    document.querySelectorAll(".tab").forEach(tab => {
+      tab.classList.remove("active");
     });
-  }
 
-  // -------------------
-  // SAVE STATE
-  // -------------------
+    const el = document.getElementById(tabId);
+    if (el) el.classList.add("active");
+  };
+
+  // -----------------------
+  // DAY SYSTEM
+  // -----------------------
+  window.setDay = function(day) {
+    const title = document.getElementById("scheduleTitle");
+    if (title) title.innerText = day + " Schedule";
+  };
+
+  // -----------------------
+  // START DAY
+  // -----------------------
+  window.startDay = function() {
+    checkboxes.forEach(box => box.checked = false);
+    saveState();
+    updateScores();
+    alert("New day started 🚀");
+  };
+
+  // -----------------------
+  // END DAY
+  // -----------------------
+  window.endDay = function() {
+    const total = checkboxes.length;
+    const done = document.querySelectorAll("input[type='checkbox']:checked").length;
+    const percent = total ? Math.round((done / total) * 100) : 0;
+
+    alert(`Day complete\n\n${done}/${total} tasks\n${percent}% done`);
+  };
+
+  // -----------------------
+  // JOURNAL
+  // -----------------------
+  window.startJournal = function() {
+    const status = document.getElementById("journalStatus");
+    if (status) status.innerText = "Journal running...";
+
+    setTimeout(() => alert("30 min check-in"), 1800000);
+    setTimeout(() => alert("60 min stop"), 3600000);
+  };
+
+  // -----------------------
+  // SAVE / LOAD
+  // -----------------------
   function saveState() {
     checkboxes.forEach((box, i) => {
-      localStorage.setItem("box_" + i, box.checked);
+      localStorage.setItem("habit_" + i, box.checked);
     });
   }
 
-  // -------------------
-  // SCORE CALC
-  // -------------------
+  function loadState() {
+    checkboxes.forEach((box, i) => {
+      box.checked = localStorage.getItem("habit_" + i) === "true";
+    });
+  }
+
+  // -----------------------
+  // SCORES
+  // -----------------------
   function updateScores() {
     let total = checkboxes.length;
     let completed = 0;
 
     let money = 0, health = 0, growth = 0, life = 0;
-    let moneyTotal = 0, healthTotal = 0, growthTotal = 0, lifeTotal = 0;
+    let moneyT = 0, healthT = 0, growthT = 0, lifeT = 0;
 
     checkboxes.forEach(box => {
-      let type = box.dataset.type || "life";
+      const type = box.dataset.type || "life";
 
       if (box.checked) {
         completed++;
-
         if (type === "money") money++;
         if (type === "health") health++;
         if (type === "growth") growth++;
         if (type === "life") life++;
       }
 
-      if (type === "money") moneyTotal++;
-      if (type === "health") healthTotal++;
-      if (type === "growth") growthTotal++;
-      if (type === "life") lifeTotal++;
+      if (type === "money") moneyT++;
+      if (type === "health") healthT++;
+      if (type === "growth") growthT++;
+      if (type === "life") lifeT++;
     });
 
-    document.getElementById("completed").innerText = completed;
-    document.getElementById("total").innerText = total;
+    const set = (id, val) => {
+      const el = document.getElementById(id);
+      if (el) el.innerText = val;
+    };
 
-    document.getElementById("moneyScore").innerText =
-      moneyTotal ? Math.round((money / moneyTotal) * 100) + "%" : "0%";
+    set("completed", completed);
+    set("total", total);
 
-    document.getElementById("healthScore").innerText =
-      healthTotal ? Math.round((health / healthTotal) * 100) + "%" : "0%";
-
-    document.getElementById("growthScore").innerText =
-      growthTotal ? Math.round((growth / growthTotal) * 100) + "%" : "0%";
-
-    document.getElementById("lifeScore").innerText =
-      lifeTotal ? Math.round((life / lifeTotal) * 100) + "%" : "0%";
+    set("moneyScore", moneyT ? Math.round((money / moneyT) * 100) + "%" : "0%");
+    set("healthScore", healthT ? Math.round((health / healthT) * 100) + "%" : "0%");
+    set("growthScore", growthT ? Math.round((growth / growthT) * 100) + "%" : "0%");
+    set("lifeScore", lifeT ? Math.round((life / lifeT) * 100) + "%" : "0%");
   }
 
-  // -------------------
+  // -----------------------
   // EVENTS
-  // -------------------
+  // -----------------------
   checkboxes.forEach(box => {
     box.addEventListener("change", () => {
       saveState();
@@ -74,60 +120,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // -------------------
-  // JOURNAL
-  // -------------------
-  window.startJournal = function () {
-    document.getElementById("journalStatus").innerText = "Journal running...";
-
-    setTimeout(() => alert("30 min check-in"), 1800000);
-    setTimeout(() => alert("60 min stop"), 3600000);
-  };
-
-  // -------------------
-  // DAY CONTROLS
-  // -------------------
-  window.startDay = function () {
-    checkboxes.forEach(box => box.checked = false);
-    saveState();
-    updateScores();
-    alert("New day started. Focus on revenue first.");
-  };
-
-  window.endDay = function () {
-    let total = checkboxes.length;
-    let done = document.querySelectorAll("input[type='checkbox']:checked").length;
-
-    let percent = total === 0 ? 0 : Math.round((done / total) * 100);
-
-    alert(
-      "Day complete.\n\nTasks done: " +
-      done +
-      "/" +
-      total +
-      "\nCompletion: " +
-      percent +
-      "%"
-    );
-  };
-
-  // -------------------
-  // TABS
-  // -------------------
-  window.showTab = function (tabId) {
-    document.querySelectorAll(".tab").forEach(tab => {
-      tab.classList.remove("active");
-    });
-
-    document.getElementById(tabId).classList.add("active");
-  };
-
-  // -------------------
+  // -----------------------
   // INIT
-  // -------------------
+  // -----------------------
   loadState();
   updateScores();
   showTab("dashboard");
 
-});
 });
