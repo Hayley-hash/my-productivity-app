@@ -212,3 +212,31 @@ button {
 button:hover {
   transform: translateY(-2px);
 }
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  margin: 0;
+}
+
+.tab {
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.progress-ring {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+}
