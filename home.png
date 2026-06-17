@@ -1,21 +1,23 @@
 <div id="home" class="page active">
 
-  <div style="display:flex; justify-content:space-between;">
-    <p style="opacity:0.6;">Life OS</p>
-    <p>Home screen</p>
-  </div>
+  <div class="container">
 
-  <h1 style="font-size:40px; margin-top:30px;">
-    Your daily system<br>
-    for habits and focus
-  </h1>
+    <div class="header">
+      <h1>Life OS</h1>
+      <p>Your daily system for habits, focus, and progress</p>
+    </div>
 
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:30px;">
+    <div class="card">
+      <p>Welcome back 👋</p>
 
-    <button onclick="show('journal')">Journal</button>
-    <button onclick="show('stats')">Stats</button>
-    <button onclick="show('dashboard')">Dashboard</button>
-    <button onclick="show('schedule')">Schedule</button>
+      <button onclick="show('dashboard')">
+        Enter App
+      </button>
+    </div>
+
+    <div class="footer">
+      Track habits • Build consistency • Stay focused
+    </div>
 
   </div>
 
