@@ -1,36 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Life OS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HOME -->
 <div id="home" class="page active">
+  <div class="center">
 
-  <div style="text-align:center; margin-top:40px;">
+    <h1>Life OS</h1>
 
-    <h1 style="font-size:42px; margin-bottom:10px;">
-      Life OS
-    </h1>
-
-    <p style="color:#9fb0c3; font-size:16px;">
+    <p class="subtext">
       Your daily system for habits, focus, and progress
     </p>
 
-    <div class="card" style="max-width:320px; margin:30px auto; text-align:center;">
-      <p style="margin-bottom:15px;">Welcome back 👋</p>
+    <div class="card">
+      <p>Welcome back 👋</p>
 
-      <button onclick="show('dashboard')" 
-        style="
-          width:100%;
-          padding:12px;
-          border-radius:10px;
-          background:#162338;
-          color:white;
-          border:1px solid #1f2a44;
-          cursor:pointer;
-        ">
+      <button class="primary-btn" onclick="show('dashboard')">
         Enter App
       </button>
     </div>
 
-    <p style="color:#6f7f95; font-size:12px; margin-top:20px;">
+    <p class="footer">
       Track habits • Build consistency • Stay focused
     </p>
 
   </div>
-
 </div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="page">
+  <div class="page-inner">
+
+    <h2>Dashboard</h2>
+
+    <button onclick="show('home')">← Back Home</button>
+
+    <p>This is your dashboard page.</p>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
