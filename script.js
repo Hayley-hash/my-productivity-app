@@ -18,14 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
     checkboxes.forEach(c => c.checked = false);
     save();
     update();
-    alert("New day started");
   };
 
   // END DAY
   window.endDay = function() {
     const total = checkboxes.length;
     const done = document.querySelectorAll("input:checked").length;
-    alert(`${done}/${total} complete`);
+    alert(`${done}/${total} completed`);
   };
 
   // JOURNAL
@@ -36,14 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // SAVE
   function save() {
     checkboxes.forEach((c, i) => {
-      localStorage.setItem("h_" + i, c.checked);
+      localStorage.setItem("habit_" + i, c.checked);
     });
   }
 
   // LOAD
   function load() {
     checkboxes.forEach((c, i) => {
-      c.checked = localStorage.getItem("h_" + i) === "true";
+      c.checked = localStorage.getItem("habit_" + i) === "true";
     });
   }
 
