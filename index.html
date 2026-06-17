@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Life OS</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -30,6 +30,7 @@
       <button onclick="showTab('dashboard')">Dashboard</button>
       <button onclick="showTab('schedule')">Schedule</button>
       <button onclick="showTab('journal')">Journal</button>
+      <button onclick="showTab('stats')">Stats</button>
 
       <hr style="border-color:#1f2a44; margin:10px 0;">
 
@@ -61,66 +62,54 @@
         <div class="card">
           <h3>Habits</h3>
 
-          <div class="habit-group">
-            <h4>Health</h4>
-            <label><input type="checkbox" data-type="health"> Brush Teeth AM</label>
-            <label><input type="checkbox" data-type="health"> Brush Teeth PM</label>
-            <label><input type="checkbox" data-type="health"> Shower</label>
-            <label><input type="checkbox" data-type="health"> Exercise</label>
-          </div>
+          <label><input type="checkbox" data-type="health"> Brush Teeth AM</label>
+          <label><input type="checkbox" data-type="health"> Brush Teeth PM</label>
+          <label><input type="checkbox" data-type="health"> Shower</label>
+          <label><input type="checkbox" data-type="health"> Exercise</label>
 
-          <div class="habit-group">
-            <h4>Money</h4>
-            <label><input type="checkbox" data-type="money"> LinkedIn Activity</label>
-            <label><input type="checkbox" data-type="money"> Revenue Activity</label>
-          </div>
+          <label><input type="checkbox" data-type="money"> LinkedIn Activity</label>
+          <label><input type="checkbox" data-type="money"> Revenue Activity</label>
 
-          <div class="habit-group">
-            <h4>Growth</h4>
-            <label><input type="checkbox" data-type="growth"> Journal</label>
-          </div>
-
+          <label><input type="checkbox" data-type="growth"> Journal</label>
         </div>
 
       </div>
 
       <!-- SCHEDULE -->
       <div id="schedule" class="tab">
-
         <h2 id="scheduleTitle">Monday Schedule</h2>
 
         <div class="card">
           <table>
             <tr><th>Time</th><th>Task</th></tr>
-
-            <tr><td>06:00</td><td>Wake & Coffee</td></tr>
-            <tr><td>06:30</td><td>Journal</td></tr>
-            <tr><td>07:00</td><td>LinkedIn</td></tr>
-            <tr><td>08:00</td><td>Work Block</td></tr>
+            <tr><td>06:00</td><td>Wake</td></tr>
+            <tr><td>07:00</td><td>Work Block</td></tr>
             <tr><td>12:00</td><td>Gym</td></tr>
-            <tr><td>15:00</td><td>Lunch</td></tr>
             <tr><td>21:00</td><td>Sleep</td></tr>
-
           </table>
         </div>
-
       </div>
 
       <!-- JOURNAL -->
       <div id="journal" class="tab">
-
         <h2>Journal</h2>
 
         <button onclick="startJournal()">Start Journal</button>
-
         <p id="journalStatus"></p>
 
-        <textarea id="journalEntry" rows="12" placeholder="Write here..."></textarea>
+        <textarea id="journalEntry" rows="10" placeholder="Write here..."></textarea>
+      </div>
 
+      <!-- STATS -->
+      <div id="stats" class="tab">
+        <h2>Stats</h2>
+
+        <div class="card">
+          <p>Coming soon: streaks, graphs, weekly progress.</p>
+        </div>
       </div>
 
     </div>
-
   </div>
 </div>
 
@@ -129,6 +118,7 @@
   <button onclick="showTab('dashboard')">🏠</button>
   <button onclick="showTab('schedule')">📅</button>
   <button onclick="showTab('journal')">✍️</button>
+  <button onclick="showTab('stats')">📊</button>
 </div>
 
 <script src="script.js"></script>
