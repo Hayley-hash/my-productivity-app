@@ -1,18 +1,13 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top left, #1b2a41, #0f1722);
-  color: white;
+  background: radial-gradient(circle at top left, #0b1020, #0f1722);
+  color: #e2e8f0;
 }
 
 /* PAGE SYSTEM */
-.page {
-  display: none;
-}
-
-.page.active {
-  display: block;
-}
+.page { display: none; }
+.page.active { display: block; }
 
 /* LAYOUT */
 .layout {
@@ -28,13 +23,16 @@ body {
 .hero h1 {
   font-size: 64px;
   margin: 0;
+  color: #00e5ff;
+  text-shadow: 0 0 8px #00e5ff, 0 0 20px #00e5ff;
 }
 
 .subtitle {
-  color: #9fb0c3;
   font-size: 18px;
   margin-top: 10px;
   max-width: 420px;
+  color: #a855f7;
+  text-shadow: 0 0 8px #a855f7;
 }
 
 /* CTA */
@@ -44,6 +42,12 @@ body {
   border: 1px solid rgba(255,255,255,0.1);
   padding: 20px;
   border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.cta p {
+  color: #22c55e;
+  text-shadow: 0 0 6px #22c55e;
 }
 
 /* PANEL */
@@ -60,10 +64,14 @@ body {
   padding: 20px;
   border-radius: 14px;
   cursor: pointer;
+  color: #38bdf8;
+  text-shadow: 0 0 6px rgba(56,189,248,0.6);
+  transition: 0.2s ease;
 }
 
 .tile:hover {
   background: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
 }
 
 /* IMAGE */
@@ -82,7 +90,8 @@ body {
 .caption {
   padding: 12px;
   font-size: 12px;
-  color: #9fb0c3;
+  color: #f472b6;
+  text-shadow: 0 0 6px rgba(244,114,182,0.5);
   text-align: center;
 }
 
