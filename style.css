@@ -7,67 +7,85 @@ body {
 
 /* TOP BAR */
 .topbar {
-  background: #111827;
-  padding: 10px;
   display: flex;
   gap: 10px;
+  padding: 10px;
+  background: #111827;
 }
 
 .topbar button {
   padding: 10px 15px;
   border: none;
+  border-radius: 8px;
   background: #334155;
   color: white;
   cursor: pointer;
-  border-radius: 8px;
 }
 
 .topbar button:hover {
   background: #475569;
 }
 
-/* PAGES */
+/* PAGE SYSTEM */
 .page {
   display: none;
-  padding: 40px;
+  padding: 20px;
 }
 
 .page.active {
   display: block;
 }
 
-/* HOME BUTTON */
-.main-btn {
+/* HOME IMAGE */
+.home-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CENTER BUTTON ON HOME IMAGE */
+#home {
+  position: relative;
+}
+
+.center-btn {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 15px 25px;
-  font-size: 16px;
-  margin-top: 20px;
   border: none;
   background: #22c55e;
   color: white;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 16px;
 }
 
-/* CANVAS BOX */
-.canvas-box {
+.center-btn:hover {
+  background: #16a34a;
+}
+
+/* CANVAS CARD */
+.card {
   margin-top: 20px;
   padding: 20px;
   background: #1e293b;
   border-radius: 12px;
 }
 
-/* CANVAS BUTTONS */
-.action-btn {
+/* BUTTONS */
+button {
   margin-top: 10px;
   margin-right: 10px;
   padding: 10px 15px;
   border: none;
+  border-radius: 8px;
   background: #3b82f6;
   color: white;
-  border-radius: 8px;
   cursor: pointer;
 }
 
-.action-btn:hover {
+button:hover {
   background: #60a5fa;
 }
