@@ -1,93 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Life OS</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Inter, sans-serif;
-      background: #0b1220;
-      color: #e6edf7;
-    }
-
-    .page { display: none; padding: 20px; }
-    .active { display: block; }
-
-    .nav {
-      display: flex;
-      justify-content: space-around;
-      padding: 12px;
-      background: #111c2e;
-      border-bottom: 1px solid #1f2a44;
-    }
-
-    .nav button {
-      background: none;
-      border: none;
-      color: #e6edf7;
-      cursor: pointer;
-    }
-
-    .card {
-      background: #111c2e;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 15px;
-      border: 1px solid #1f2a44;
-    }
-  </style>
-</head>
-
-<body>
-
-<div class="nav">
-  <button onclick="show('home')">Home</button>
-  <button onclick="show('dashboard')">Dashboard</button>
-  <button onclick="show('schedule')">Schedule</button>
-  <button onclick="show('journal')">Journal</button>
-  <button onclick="show('stats')">Stats</button>
-</div>
-
 <div id="home" class="page active">
-  <h1>Life OS</h1>
-  <p>Your daily system for habits and focus</p>
 
-  <div class="card">
-    <button onclick="show('dashboard')">Enter App</button>
+  <div style="text-align:center; margin-top:40px;">
+
+    <h1 style="font-size:42px; margin-bottom:10px;">
+      Life OS
+    </h1>
+
+    <p style="color:#9fb0c3; font-size:16px;">
+      Your daily system for habits, focus, and progress
+    </p>
+
+    <div class="card" style="max-width:320px; margin:30px auto; text-align:center;">
+      <p style="margin-bottom:15px;">Welcome back 👋</p>
+
+      <button onclick="show('dashboard')" 
+        style="
+          width:100%;
+          padding:12px;
+          border-radius:10px;
+          background:#162338;
+          color:white;
+          border:1px solid #1f2a44;
+          cursor:pointer;
+        ">
+        Enter App
+      </button>
+    </div>
+
+    <p style="color:#6f7f95; font-size:12px; margin-top:20px;">
+      Track habits • Build consistency • Stay focused
+    </p>
+
   </div>
+
 </div>
-
-<div id="dashboard" class="page">
-  <h1>Dashboard</h1>
-  <div class="card">Habits coming soon</div>
-</div>
-
-<div id="schedule" class="page">
-  <h1>Schedule</h1>
-  <div class="card">Schedule coming soon</div>
-</div>
-
-<div id="journal" class="page">
-  <h1>Journal</h1>
-  <div class="card">Journal coming soon</div>
-</div>
-
-<div id="stats" class="page">
-  <h1>Stats</h1>
-  <div class="card">Stats coming soon</div>
-</div>
-
-<script>
-  function show(page) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById(page).classList.add('active');
-  }
-</script>
-
-</body>
-</html>
