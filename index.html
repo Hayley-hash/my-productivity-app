@@ -9,44 +9,76 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <h1>Life OS</h1>
-  </header>
-
-  <!-- TOP BUTTON BAR -->
+  <!-- NAV -->
   <div class="button-bar">
     <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('canvas')">Canvas</button>
-    <button onclick="alert('Settings clicked')">Settings</button>
+    <button onclick="showPage('schedule')">Schedule</button>
   </div>
 
-  <!-- CONTENT AREA -->
-  <main>
+  <!-- HOME PAGE -->
+  <div id="home" class="page active">
+    <h1>Life OS</h1>
+    <p>Welcome</p>
+  </div>
 
-    <!-- HOME -->
-    <div id="home" class="page active">
+  <!-- SCHEDULE FORM PAGE -->
+  <div id="schedule" class="page">
 
-      <img src="home.png" class="hero-image" alt="Home"/>
+    <h2>Personalise your schedule</h2>
 
-    </div>
+    <p class="subtext">
+      Pick your team and fill in your details — I may personally reach out by email or phone. No spam, promise.
+    </p>
 
-    <!-- CANVAS -->
-    <div id="canvas" class="page">
+    <form class="form-card">
 
-      <h2>Canvas</h2>
+      <label>Favourite Team</label>
+      <select>
+        <option>Argentina</option>
+        <option>South Africa</option>
+        <option>Brazil</option>
+        <option>England</option>
+        <option>France</option>
+      </select>
 
-      <p>This is your working area.</p>
+      <label>Name</label>
+      <input type="text" placeholder="Your name">
 
-    </div>
+      <label>Company</label>
+      <input type="text" placeholder="Your company">
 
-  </main>
+      <label>Position</label>
+      <input type="text" placeholder="Your role">
 
-  <!-- BOTTOM BUTTON BAR -->
-  <div class="bottom-bar">
-    <button onclick="alert('Add')">Add</button>
-    <button onclick="alert('Save')">Save</button>
-    <button onclick="showPage('home')">Back Home</button>
+      <label>Email</label>
+      <input type="email" placeholder="you@company.com">
+
+      <label>Phone (optional)</label>
+      <input type="tel" placeholder="+27 82 000 0000">
+
+      <label>Your Timezone</label>
+      <select>
+        <option>SAST — South Africa (UTC+2)</option>
+        <option>GMT — UK</option>
+        <option>EST — USA East</option>
+        <option>PST — USA West</option>
+      </select>
+
+      <p class="info">
+        Match times will be shown in your local time alongside SAST
+      </p>
+
+      <label class="checkbox">
+        <input type="checkbox">
+        Email me the daily spoiler-free watch brief each morning
+      </label>
+
+      <button type="button" onclick="saveForm()">
+        Save my team
+      </button>
+
+    </form>
+
   </div>
 
   <script src="script.js"></script>
