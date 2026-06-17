@@ -1,42 +1,22 @@
 <div id="home" class="page active">
 
-  <!-- TOP BAR -->
-  <div style="display:flex; justify-content:space-between; align-items:center;">
-    <p style="opacity:0.7; font-size:14px;">Life OS</p>
-    <p style="text-decoration:underline; font-size:14px;">Home screen</p>
+  <div style="display:flex; justify-content:space-between;">
+    <p style="opacity:0.6;">Life OS</p>
+    <p>Home screen</p>
   </div>
 
-  <!-- HERO -->
-  <h1 style="font-size:42px; margin-top:40px; line-height:1.2;">
+  <h1 style="font-size:40px; margin-top:30px;">
     Your daily system<br>
     for habits and focus
   </h1>
 
-  <!-- NAV BUTTON GRID -->
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:40px;">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:30px;">
 
-    <button onclick="show('journal')" style="padding:12px; border:1px solid #333; background:black; color:white;">
-      Journal →
-    </button>
+    <button onclick="show('journal')">Journal</button>
+    <button onclick="show('stats')">Stats</button>
+    <button onclick="show('dashboard')">Dashboard</button>
+    <button onclick="show('schedule')">Schedule</button>
 
-    <button onclick="show('stats')" style="padding:12px; border:1px solid #333; background:black; color:white;">
-      Stats →
-    </button>
-
-    <button onclick="show('dashboard')" style="padding:12px; border:1px solid #333; background:black; color:white;">
-      Dashboard →
-    </button>
-
-    <button onclick="show('schedule')" style="padding:12px; border:1px solid #333; background:black; color:white;">
-      Schedule →
-    </button>
-
-  </div>
-
-  <!-- LOWER TEXT SECTIONS -->
-  <div style="margin-top:60px; opacity:0.6;">
-    <p>Dashboard screen</p>
-    <p style="margin-top:40px;">Schedule screen</p>
   </div>
 
 </div>
