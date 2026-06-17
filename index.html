@@ -18,13 +18,17 @@
   <!-- HOME PAGE -->
   <div id="home" class="page active">
 
-    <!-- YOUR CANVA IMAGE (optional but recommended) -->
-    <img src="home.png" class="home-image" alt="Home"/>
+    <div class="home-wrapper">
 
-    <!-- BUTTON ON TOP OF IMAGE -->
-    <button class="center-btn" onclick="showPage('canvas')">
-      Enter Canvas
-    </button>
+      <!-- Canva image background -->
+      <img src="home.png" class="home-image" alt="Home"/>
+
+      <!-- REAL clickable button -->
+      <button class="overlay-btn" onclick="showPage('canvas')">
+        Enter Canvas
+      </button>
+
+    </div>
 
   </div>
 
@@ -34,6 +38,7 @@
     <h1>Canvas</h1>
 
     <div class="card">
+
       <p>This is your working space.</p>
 
       <button onclick="alert('Button works!')">
