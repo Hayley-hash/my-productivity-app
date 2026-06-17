@@ -8,79 +8,70 @@ body {
 .page { display: none; }
 .page.active { display: block; }
 
-.container {
-  max-width: 1000px;
+.app {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 40px;
 }
 
-/* HERO (THIS is what makes it feel like Canva) */
-.hero {
+/* TOP BAR */
+.topbar {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
-.hero h1 {
-  font-size: 56px;
+.topbar h2 {
+  font-size: 48px;
   margin: 0;
 }
 
-.hero p {
+.topbar p {
   color: #9fb0c3;
-  margin-top: 10px;
-  font-size: 16px;
 }
 
-/* MAIN CARD */
-.main-card {
+/* GRID SYSTEM (THIS is what Canva uses visually) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* CARDS */
+.card {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 18px;
-  max-width: 420px;
-  margin: 0 auto 40px auto;
+  padding: 20px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.card.main {
+  grid-column: span 2;
   text-align: center;
 }
 
 /* BUTTON */
 button {
-  margin-top: 15px;
-  padding: 14px 20px;
+  margin-top: 10px;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
   border: none;
-  border-radius: 12px;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
-  font-weight: bold;
   cursor: pointer;
+}
+
+/* IMAGE BANNER */
+.banner {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.banner img {
   width: 100%;
-}
-
-/* GRID (THIS is the missing Canva part) */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  max-width: 420px;
-  margin: 0 auto;
-}
-
-.tile {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 20px;
-  border-radius: 14px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.tile:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-.footer {
-  text-align: center;
-  margin-top: 40px;
-  color: #6f7f95;
-  font-size: 12px;
+  border-radius: 16px;
+  margin-top: 10px;
+  opacity: 0.9;
 }
