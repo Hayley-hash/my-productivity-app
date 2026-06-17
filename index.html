@@ -17,29 +17,35 @@
 
   <!-- HOME PAGE -->
   <div id="home" class="page active">
-    <h1>Welcome to Life OS</h1>
-    <p>Your dashboard starts here.</p>
 
-    <button onclick="showPage('canvas')" class="main-btn">
-      Go to Canvas
+    <!-- YOUR CANVA IMAGE (optional but recommended) -->
+    <img src="home.png" class="home-image" alt="Home"/>
+
+    <!-- BUTTON ON TOP OF IMAGE -->
+    <button class="center-btn" onclick="showPage('canvas')">
+      Enter Canvas
     </button>
+
   </div>
 
   <!-- CANVAS PAGE -->
   <div id="canvas" class="page">
-    <h1>Canvas Screen</h1>
 
-    <div class="canvas-box">
+    <h1>Canvas</h1>
+
+    <div class="card">
       <p>This is your working space.</p>
 
-      <button onclick="alert('Button works!')" class="action-btn">
+      <button onclick="alert('Button works!')">
         Test Button
       </button>
 
-      <button onclick="showPage('home')" class="action-btn">
+      <button onclick="showPage('home')">
         Back Home
       </button>
+
     </div>
+
   </div>
 
   <script src="script.js"></script>
