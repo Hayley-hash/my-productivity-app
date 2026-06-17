@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0f1722;
+  background: radial-gradient(circle at top, #1b2a41, #0f1722);
   color: white;
 }
 
@@ -14,45 +14,69 @@ body {
   display: block;
 }
 
-/* CENTERING */
+/* APP LAYOUT */
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 60px 20px;
 }
 
-/* CARD (Tailwind-like white panel feel) */
-.card {
-  background: white;
-  color: #111;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+/* HEADER STYLE */
+.header {
   text-align: center;
+  margin-bottom: 40px;
 }
 
-/* HEADINGS */
-h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+.header h1 {
+  font-size: 54px;
+  margin: 0;
+  letter-spacing: -1px;
 }
 
-p {
-  color: #555;
+.header p {
+  color: #9fb0c3;
   margin-top: 10px;
+  font-size: 16px;
+}
+
+/* MAIN CARD */
+.card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 18px;
+  max-width: 420px;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.card p {
+  color: #cbd5e1;
 }
 
 /* BUTTON */
 button {
   margin-top: 20px;
-  padding: 12px 18px;
+  padding: 14px 20px;
   border: none;
-  border-radius: 8px;
-  background: #1d4ed8;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
+  font-weight: bold;
   cursor: pointer;
+  width: 100%;
 }
 
 button:hover {
-  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* FOOTER TEXT */
+.footer {
+  text-align: center;
+  margin-top: 25px;
+  color: #6f7f95;
+  font-size: 12px;
 }
