@@ -1,10 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Inter', sans-serif;
+  background: #0f172a;
+  color: white;
 }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f6f9;
+
+/* APP LAYOUT */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 /* TOP BAR */
@@ -12,38 +25,51 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background: #111;
+  padding: 16px 24px;
+  background: #111827;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* BUTTONS */
+button {
+  background: #1f2937;
   color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #374151;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.98);
 }
 
 /* LAYOUT */
 .layout {
   display: flex;
-  height: calc(100vh - 60px);
+  flex: 1;
+  overflow: hidden;
 }
 
 /* SIDEBAR */
 .sidebar {
-  width: 200px;
-  background: #1c1c1c;
-  padding: 10px;
+  width: 220px;
+  background: #111827;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border-right: 1px solid #1f2937;
 }
 
 .sidebar button {
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  background: #333;
-  color: white;
-  border-radius: 6px;
-}
-
-.sidebar button:hover {
-  background: #555;
+  width: 100%;
 }
 
 /* MAIN */
@@ -56,97 +82,80 @@ body {
 /* TABS */
 .tab {
   display: none;
+  animation: fade 0.2s ease-in;
 }
 
 .tab.active {
   display: block;
 }
 
+@keyframes fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* CARDS */
 .card {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
 }
 
-/* BUTTONS */
-button {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-/* MOBILE OPTIMISATION */
-@media (max-width: 768px) {
-
-  .layout {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .sidebar {
-    width: 100%;
-    flex-direction: row;
-    overflow-x: auto;
-    padding: 10px;
-  }
-
-  .sidebar button {
-    flex: 1;
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .topbar {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .main {
-    padding: 10px;
-  }
-
-  .card {
-    padding: 12px;
-    font-size: 14px;
-  }
-
-  button {
-    width: 100%;
-    margin-top: 5px;
-  }
-}
-button {
-  background: #111;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 14px;
+/* HEADINGS */
+h1, h2, h3 {
+  margin-bottom: 10px;
 }
 
-button:active {
-  transform: scale(0.98);
-}
+/* LABELS */
 label {
   display: block;
   padding: 6px 0;
-}
-/* FULL APP LAYOUT */
-.layout {
-  flex-direction: column;
+  color: #d1d5db;
 }
 
-/* MAIN AREA FULL SCREEN FEEL */
-.main {
-  padding: 15px;
-  padding-bottom: 70px; /* space for bottom nav */
+/* PROGRESS */
+.progress-ring {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
 }
 
-/* BOTTOM NAV (MOBILE APP STYLE) */
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #111827;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #1f2937;
+  text-align: left;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .main {
+    padding: 12px;
+  }
+}
+
+/* BOTTOM NAV */
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -156,87 +165,12 @@ label {
   display: flex;
   justify-content: space-around;
 
-  background: #111;
+  background: #111827;
+  border-top: 1px solid #1f2937;
   padding: 10px 0;
-
-  border-top: 1px solid #333;
 }
 
 .bottom-nav button {
   background: transparent;
-  color: white;
   font-size: 18px;
-  border: none;
-}
-
-/* ACTIVE TAB FEEL (optional highlight later) */
-.tab {
-  animation: fade 0.2s ease-in;
-}
-
-@keyframes fade {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
-  margin: 0;
-}
-
-.topbar {
-  background: white;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,.1);
-}
-
-.main {
-  padding: 20px;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 10px rgba(0,0,0,.08);
-}
-
-button {
-  border: none;
-  border-radius: 10px;
-  padding: 10px 16px;
-  cursor: pointer;
-}
-
-button:hover {
-  transform: translateY(-2px);
-}
-body {
-  font-family: Arial, sans-serif;
-  background: #f5f7fb;
-  margin: 0;
-}
-
-.tab {
-  padding: 20px;
-}
-
-.card {
-  background: white;
-  border-radius: 18px;
-  padding: 16px;
-  margin-bottom: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-}
-
-h2 {
-  margin-top: 0;
-}
-
-.progress-ring {
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
-  padding: 20px;
 }
