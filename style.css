@@ -10,13 +10,6 @@ body {
   color: #e6edf7;
 }
 
-/* APP */
-.app {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
 /* TOP */
 .topbar {
   display: flex;
@@ -29,7 +22,7 @@ body {
 /* LAYOUT */
 .layout {
   display: flex;
-  flex: 1;
+  height: calc(100vh - 60px);
 }
 
 /* SIDEBAR */
@@ -73,7 +66,7 @@ button:hover {
   display: block;
 }
 
-/* CARDS */
+/* CARD */
 .card {
   background: #111c2e;
   border: 1px solid #1f2a44;
@@ -82,19 +75,10 @@ button:hover {
   margin-bottom: 16px;
 }
 
-/* HABITS */
-.habit-group {
-  background: #0f1a2d;
-  border: 1px solid #1f2a44;
-  border-radius: 12px;
-  padding: 12px;
-  margin-bottom: 12px;
-}
-
+/* LABELS */
 label {
   display: block;
   padding: 6px 0;
-  color: #cbd5e1;
 }
 
 /* TABLE */
@@ -112,8 +96,7 @@ th, td {
 .bottom-nav {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   background: #111c2e;
   border-top: 1px solid #1f2a44;
   display: flex;
