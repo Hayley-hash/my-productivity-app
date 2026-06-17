@@ -2,22 +2,35 @@
 
   <div class="container">
 
-    <div class="header">
+    <!-- HERO -->
+    <div class="hero">
       <h1>Life OS</h1>
       <p>Your daily system for habits, focus, and progress</p>
     </div>
 
-    <div class="card">
-      <p>Welcome back 👋</p>
+    <!-- MAIN ACTION -->
+    <div class="main-card">
+      <p class="welcome">Welcome back 👋</p>
 
       <button onclick="show('dashboard')">
         Enter App
       </button>
     </div>
 
-    <div class="footer">
-      Track habits • Build consistency • Stay focused
+    <!-- FEATURE GRID -->
+    <div class="grid">
+
+      <div class="tile">📓 Journal</div>
+      <div class="tile">📊 Stats</div>
+      <div class="tile">📅 Schedule</div>
+      <div class="tile">🎯 Focus</div>
+
     </div>
+
+    <!-- FOOTER -->
+    <p class="footer">
+      Track habits • Build consistency • Stay focused
+    </p>
 
   </div>
 
