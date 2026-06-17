@@ -1,87 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Life OS</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+<div id="halloween" class="page">
 
-<body>
+  <!-- HEADER -->
+  <div class="halloween-header">
+    <h1>HALLOWEEN</h1>
+    <h2>PARTY</h2>
+    <p>Sign Up Sheet</p>
 
-  <!-- TOP NAV -->
-  <div class="button-bar">
-    <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('canvas')">Canvas</button>
-    <button onclick="showPage('schedule')">Schedule</button>
+    <div class="meta">
+      <span>📅 31 October</span>
+      <span>⏰ 6PM - 10PM</span>
+    </div>
   </div>
 
-  <!-- ================= HOME ================= -->
-  <div id="home" class="page active">
-    <h1>Front Page</h1>
-    <p>This is your home screen.</p>
-  </div>
+  <!-- TABLE -->
+  <div class="table-container">
 
-  <!-- ================= CANVAS ================= -->
-  <div id="canvas" class="page">
-    <h1>Canvas</h1>
-    <p>Your working space goes here.</p>
-  </div>
+    <table>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+        </tr>
+      </thead>
 
-  <!-- ================= SCHEDULE FORM ================= -->
-  <div id="schedule" class="page">
-
-    <h2>Personalise your schedule</h2>
-
-    <p class="subtext">
-      Pick your team and fill in your details — I may personally reach out by email or phone. No spam, promise.
-    </p>
-
-    <form class="form-card">
-
-      <label>Favourite Team</label>
-      <select>
-        <option>Argentina</option>
-        <option>South Africa</option>
-        <option>Brazil</option>
-        <option>England</option>
-      </select>
-
-      <label>Name</label>
-      <input type="text" placeholder="Your name">
-
-      <label>Company</label>
-      <input type="text" placeholder="Your company">
-
-      <label>Position</label>
-      <input type="text" placeholder="Your role">
-
-      <label>Email</label>
-      <input type="email" placeholder="you@company.com">
-
-      <label>Phone</label>
-      <input type="tel" placeholder="+27 82 000 0000">
-
-      <label>Timezone</label>
-      <select>
-        <option>SAST (South Africa)</option>
-        <option>GMT</option>
-        <option>EST</option>
-      </select>
-
-      <label class="checkbox">
-        <input type="checkbox">
-        Email me daily updates
-      </label>
-
-      <button type="button" onclick="saveForm()">
-        Save my team
-      </button>
-
-    </form>
+      <tbody>
+        <!-- 12 rows -->
+        <tr><td>1</td><td><input placeholder="Enter name"></td><td><input placeholder="Phone"></td><td><input placeholder="Email"></td></tr>
+        <tr><td>2</td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td>3</td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td>4</td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td>5</td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td>6</td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td>7</td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td>8</td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td>9</td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td>10</td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td>11</td><td><input></td><td><input></td><td><input></td></tr>
+        <tr><td>12</td><td><input></td><td><input></td><td><input></td></tr>
+      </tbody>
+    </table>
 
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- FOOTER -->
+  <div class="halloween-footer">
+    📞 +123-456-7890 | 📍 123 Anywhere St, Any City
+  </div>
+
+</div>
