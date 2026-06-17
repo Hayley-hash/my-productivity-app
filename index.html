@@ -1,89 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Life OS</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- HOME -->
-<div id="home" class="page active">
+  <!-- TOP NAV -->
+  <div class="topbar">
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('canvas')">Canvas</button>
+  </div>
 
-  <div class="layout">
+  <!-- HOME PAGE -->
+  <div id="home" class="page active">
+    <h1>Welcome to Life OS</h1>
+    <p>Your dashboard starts here.</p>
 
-    <!-- LEFT -->
-    <div class="hero">
+    <button onclick="showPage('canvas')" class="main-btn">
+      Go to Canvas
+    </button>
+  </div>
 
-      <h1>Life OS</h1>
+  <!-- CANVAS PAGE -->
+  <div id="canvas" class="page">
+    <h1>Canvas Screen</h1>
 
-      <p class="subtitle">
-        Your daily system for habits, focus, and progress
-      </p>
+    <div class="canvas-box">
+      <p>This is your working space.</p>
 
-      <div class="cta">
-        <p>Welcome back 👋</p>
+      <button onclick="alert('Button works!')" class="action-btn">
+        Test Button
+      </button>
 
-        <button onclick="show('dashboard')">
-          Enter App
-        </button>
-      </div>
-
+      <button onclick="showPage('home')" class="action-btn">
+        Back Home
+      </button>
     </div>
-
-    <!-- RIGHT -->
-    <div class="panel">
-
-      <div class="tile" onclick="show('journal')">📓 Journal</div>
-      <div class="tile" onclick="show('stats')">📊 Stats</div>
-      <div class="tile" onclick="show('schedule')">📅 Schedule</div>
-      <div class="tile" onclick="show('dashboard')">📌 Dashboard</div>
-
-      <!-- IMAGE -->
-      <div class="image-card">
-        <img src="home.png" alt="home image">
-        <div class="caption">Coming soon: AI insights</div>
-      </div>
-
-    </div>
-
   </div>
 
-</div>
-
-<!-- DASHBOARD -->
-<div id="dashboard" class="page">
-  <div class="page-inner">
-    <h2>Dashboard</h2>
-    <button onclick="show('home')">← Back</button>
-  </div>
-</div>
-
-<!-- JOURNAL -->
-<div id="journal" class="page">
-  <div class="page-inner">
-    <h2>Journal</h2>
-    <button onclick="show('home')">← Back</button>
-  </div>
-</div>
-
-<!-- STATS -->
-<div id="stats" class="page">
-  <div class="page-inner">
-    <h2>Stats</h2>
-    <button onclick="show('home')">← Back</button>
-  </div>
-</div>
-
-<!-- SCHEDULE -->
-<div id="schedule" class="page">
-  <div class="page-inner">
-    <h2>Schedule</h2>
-    <button onclick="show('home')">← Back</button>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
