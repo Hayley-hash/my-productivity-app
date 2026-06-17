@@ -10,42 +10,81 @@
 
 <!-- HOME -->
 <div id="home" class="page active">
-  <div class="center">
 
-    <h1>Life OS</h1>
+  <div class="layout">
 
-    <p class="subtext">
-      Your daily system for habits, focus, and progress
-    </p>
+    <!-- LEFT -->
+    <div class="hero">
 
-    <div class="card">
-      <p>Welcome back 👋</p>
+      <h1>Life OS</h1>
 
-      <button class="primary-btn" onclick="show('dashboard')">
-        Enter App
-      </button>
+      <p class="subtitle">
+        Your daily system for habits, focus, and progress
+      </p>
+
+      <div class="cta">
+        <p>Welcome back 👋</p>
+
+        <button onclick="show('dashboard')">
+          Enter App
+        </button>
+      </div>
+
     </div>
 
-    <p class="footer">
-      Track habits • Build consistency • Stay focused
-    </p>
+    <!-- RIGHT -->
+    <div class="panel">
+
+      <div class="tile" onclick="show('journal')">📓 Journal</div>
+      <div class="tile" onclick="show('stats')">📊 Stats</div>
+      <div class="tile" onclick="show('schedule')">📅 Schedule</div>
+      <div class="tile" onclick="show('dashboard')">📌 Dashboard</div>
+
+      <div class="image">
+        <img src="home.png" alt="coming soon">
+        <p>Coming soon: AI insights</p>
+      </div>
+
+    </div>
 
   </div>
+
 </div>
 
 <!-- DASHBOARD -->
 <div id="dashboard" class="page">
   <div class="page-inner">
-
     <h2>Dashboard</h2>
+    <button onclick="show('home')">← Back</button>
+  </div>
+</div>
 
-    <button onclick="show('home')">← Back Home</button>
+<!-- JOURNAL -->
+<div id="journal" class="page">
+  <div class="page-inner">
+    <h2>Journal</h2>
+    <button onclick="show('home')">← Back</button>
+  </div>
+</div>
 
-    <p>This is your dashboard page.</p>
+<!-- STATS -->
+<div id="stats" class="page">
+  <div class="page-inner">
+    <h2>Stats</h2>
+    <button onclick="show('home')">← Back</button>
+  </div>
+</div>
 
+<!-- SCHEDULE -->
+<div id="schedule" class="page">
+  <div class="page-inner">
+    <h2>Schedule</h2>
+    <button onclick="show('home')">← Back</button>
   </div>
 </div>
 
 <script src="script.js"></script>
+</body>
+</html>
 </body>
 </html>
