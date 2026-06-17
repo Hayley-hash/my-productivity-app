@@ -5,84 +5,36 @@ body {
   color: white;
 }
 
-/* TOP BAR */
-.topbar {
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 15px;
+  background: #111827;
+}
+
+/* TOP BUTTON BAR */
+.button-bar {
   display: flex;
   gap: 10px;
+  justify-content: center;
+  padding: 10px;
+  background: #1f2937;
+}
+
+/* BOTTOM BUTTON BAR */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
   padding: 10px;
   background: #111827;
 }
 
-.topbar button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  background: #334155;
-  color: white;
-  cursor: pointer;
-}
-
-.topbar button:hover {
-  background: #475569;
-}
-
-/* PAGE SYSTEM */
-.page {
-  display: none;
-  padding: 20px;
-}
-
-.page.active {
-  display: block;
-}
-
-/* HOME LAYOUT */
-.home-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-/* IMAGE (no click blocking) */
-.home-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  pointer-events: none;
-}
-
-/* BUTTON ON TOP OF IMAGE */
-.overlay-btn {
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9999;
-
-  padding: 15px 25px;
-  border: none;
-  background: #22c55e;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.overlay-btn:hover {
-  background: #16a34a;
-}
-
-/* CANVAS BOX */
-.card {
-  margin-top: 20px;
-  padding: 20px;
-  background: #1e293b;
-  border-radius: 12px;
-}
-
-/* DEFAULT BUTTONS */
+/* BUTTONS */
 button {
-  margin-top: 10px;
-  margin-right: 10px;
   padding: 10px 15px;
   border: none;
   border-radius: 8px;
@@ -93,4 +45,24 @@ button {
 
 button:hover {
   background: #60a5fa;
+}
+
+/* PAGE SYSTEM */
+.page {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+.page.active {
+  display: block;
+}
+
+/* IMAGE */
+.hero-image {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
 }
