@@ -31,7 +31,7 @@
       <button onclick="showTab('schedule')">Schedule</button>
       <button onclick="showTab('journal')">Journal</button>
 
-      <hr style="border-color:#1f2937; margin:10px 0;">
+      <hr style="border-color:#1f2a44; margin:10px 0;">
 
       <button onclick="setDay('Monday')">Monday</button>
       <button onclick="setDay('Tuesday')">Tuesday</button>
@@ -56,14 +56,13 @@
           <p>💰 Money: <span id="moneyScore">0%</span></p>
           <p>💪 Health: <span id="healthScore">0%</span></p>
           <p>📚 Growth: <span id="growthScore">0%</span></p>
-          <p>🏡 Life: <span id="lifeScore">0%</span></p>
         </div>
 
         <div class="card">
           <h3>Habits</h3>
 
           <div class="habit-group">
-            <h4>🧠 Health</h4>
+            <h4>Health</h4>
             <label><input type="checkbox" data-type="health"> Brush Teeth AM</label>
             <label><input type="checkbox" data-type="health"> Brush Teeth PM</label>
             <label><input type="checkbox" data-type="health"> Shower</label>
@@ -71,13 +70,13 @@
           </div>
 
           <div class="habit-group">
-            <h4>💰 Money</h4>
+            <h4>Money</h4>
             <label><input type="checkbox" data-type="money"> LinkedIn Activity</label>
             <label><input type="checkbox" data-type="money"> Revenue Activity</label>
           </div>
 
           <div class="habit-group">
-            <h4>📚 Growth</h4>
+            <h4>Growth</h4>
             <label><input type="checkbox" data-type="growth"> Journal</label>
           </div>
 
@@ -92,25 +91,15 @@
 
         <div class="card">
           <table>
-            <tr>
-              <th>Time</th>
-              <th>Task</th>
-            </tr>
+            <tr><th>Time</th><th>Task</th></tr>
 
             <tr><td>06:00</td><td>Wake & Coffee</td></tr>
             <tr><td>06:30</td><td>Journal</td></tr>
-            <tr><td>07:00</td><td>LinkedIn Comments</td></tr>
-            <tr><td>07:30</td><td>Leads into Woodpecker</td></tr>
-            <tr><td>08:30</td><td>HubSpot Tracking</td></tr>
-            <tr><td>10:00</td><td>Blog Posts</td></tr>
-            <tr><td>12:00</td><td>Gym Prep</td></tr>
-            <tr><td>13:00</td><td>Weights</td></tr>
-            <tr><td>14:00</td><td>Sauna / Steam</td></tr>
+            <tr><td>07:00</td><td>LinkedIn</td></tr>
+            <tr><td>08:00</td><td>Work Block</td></tr>
+            <tr><td>12:00</td><td>Gym</td></tr>
             <tr><td>15:00</td><td>Lunch</td></tr>
-            <tr><td>16:00</td><td>Prepare Dinner</td></tr>
-            <tr><td>17:00</td><td>Eat / Dogs</td></tr>
-            <tr><td>18:00</td><td>Relax</td></tr>
-            <tr><td>21:00</td><td>Bed</td></tr>
+            <tr><td>21:00</td><td>Sleep</td></tr>
 
           </table>
         </div>
@@ -126,12 +115,7 @@
 
         <p id="journalStatus"></p>
 
-        <textarea
-          id="journalEntry"
-          rows="12"
-          placeholder="Write your journal here..."
-          style="width:100%; padding:10px;"
-        ></textarea>
+        <textarea id="journalEntry" rows="12" placeholder="Write here..."></textarea>
 
       </div>
 
